@@ -1,0 +1,24 @@
+{
+  "_note": "Деньги — доля стоимости подписки, а не цена API. rub_equiv = plan_price_month × 12/52 × Δ% недельного лимита / 100 × fx_rate.",
+  "plan": "Claude Max",
+  "plan_price_month": 200,
+  "currency": "USD",
+  "plan_price_date": "2026-11-09",
+  "fx_rate": 81,
+  "fx_date": "2026-11-09",
+  "fx_source": "курс, заданный человеком (не ЦБ)",
+  "step_budget_tokens": 400000,
+  "step_budgets": {},
+  "budget_threshold": 0.8,
+  "estimate": {
+    "tokens_per_step": 60000,
+    "tokens_per_brief_char": 4,
+    "steps_total": 11,
+    "minutes_per_gate": 3,
+    "gates": 3,
+    "tokens_per_question": 27000,
+    "research_brief_tokens": 25000
+  },
+  "_smeta_recalc_note": "smeta recalc после утверждения плана: ворота сметы повторяются, только если новая оценка отличается больше чем на столько процентов",
+  "smeta_recalc_gate_pct": 15
+}

@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.local
+node_modules/
+__pycache__/
+.venv/
+agentic/receipts/img/*.tmp
+projects/.pending_prompts.jsonl

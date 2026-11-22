@@ -1,0 +1,17 @@
+{
+  "default": "default",
+  "profiles": {
+    "default": {
+      "description": "Правила проверки по умолчанию",
+      "overrides": {}
+    },
+    "strict": {
+      "description": "Строгая проверка перед комитетом: долг доказательств, деньги и смета — ошибки",
+      "overrides": {
+        "W06": "error",
+        "W07": "error",
+        "W10": "error"
+      }
+    }
+  }
+}

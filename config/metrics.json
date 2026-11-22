@@ -1,0 +1,111 @@
+{
+  "version": "1.1",
+  "note": "definition_hash = sha256({metric_id, formula, unit}); новые метрики добавляют люди",
+  "metrics": {
+    "subscribers_paying": {
+      "title": "Платящие подписчики на конец периода",
+      "formula": "count(active_paid_subscriptions, period_end)",
+      "unit": "count"
+    },
+    "subscribers_mau": {
+      "title": "Активные пользователи подписки за месяц (MAU)",
+      "formula": "count_distinct(users_active, month)",
+      "unit": "count"
+    },
+    "trial_to_paid": {
+      "title": "Конверсия из пробного периода в платный",
+      "formula": "paid_after_trial / trials_ended",
+      "unit": "share"
+    },
+    "churn_m1": {
+      "title": "Отток в первый платный месяц",
+      "formula": "1 - active_m1 / paid_m0",
+      "unit": "share"
+    },
+    "churn_monthly": {
+      "title": "Месячный отток платящей базы",
+      "formula": "cancelled_in_month / paying_at_month_start",
+      "unit": "share"
+    },
+    "retention_m1": {
+      "title": "Удержание M1 (доля когорты, платящей через 1 месяц)",
+      "formula": "paying_m1 / cohort_size",
+      "unit": "share"
+    },
+    "retention_m2": {
+      "title": "Удержание M2",
+      "formula": "paying_m2 / cohort_size",
+      "unit": "share"
+    },
+    "retention_m3": {
+      "title": "Удержание M3",
+      "formula": "paying_m3 / cohort_size",
+      "unit": "share"
+    },
+    "retention_m6": {
+      "title": "Удержание M6",
+      "formula": "paying_m6 / cohort_size",
+      "unit": "share"
+    },
+    "retention_m12": {
+      "title": "Удержание M12",
+      "formula": "paying_m12 / cohort_size",
+      "unit": "share"
+    },
+    "arpu": {
+      "title": "Средняя выручка на пользователя",
+      "formula": "revenue / avg_users",
+      "unit": "RUB"
+    },
+    "arppu": {
+      "title": "Средняя выручка на платящего",
+      "formula": "revenue / avg_paying_users",
+      "unit": "RUB"
+    },
+    "price_month": {
+      "title": "Цена подписки в месяц",
+      "formula": "list_price_month",
+      "unit": "RUB"
+    },
+    "ltv": {
+      "title": "Пожизненная ценность подписчика",
+      "formula": "arppu * gross_margin / churn_monthly",
+      "unit": "RUB"
+    },
+    "cac": {
+      "title": "Стоимость привлечения платящего",
+      "formula": "acquisition_cost / new_paying",
+      "unit": "RUB"
+    },
+    "penetration": {
+      "title": "Проникновение подписки в базу абонентов",
+      "formula": "subscribers_paying / subscriber_base",
+      "unit": "share"
+    },
+    "reactivation_rate": {
+      "title": "Доля вернувшихся после отмены",
+      "formula": "reactivated / cancelled_cohort",
+      "unit": "share"
+    },
+    "involuntary_churn_share": {
+      "title": "Доля вынужденного оттока (неуспешное списание)",
+      "formula": "failed_payment_cancels / all_cancels",
+      "unit": "share"
+    },
+    "nps": {
+      "title": "Индекс готовности рекомендовать",
+      "formula": "promoters_share - detractors_share",
+      "unit": "points"
+    },
+    "market_subs_ru": {
+      "title": "Число подписок онлайн-сервисов в России",
+      "formula": "count(subscriptions, market)",
+      "unit": "count"
+    },
+    "market_revenue_ru": {
+      "title": "Объём рынка подписок в России",
+      "formula": "sum(revenue, market)",
+      "unit": "RUB"
+    }
+  }
+}

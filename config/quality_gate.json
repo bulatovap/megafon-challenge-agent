@@ -1,0 +1,271 @@
+{
+  "version": "1.2",
+  "score": {
+    "base": 100,
+    "error": 10,
+    "warning": 2
+  },
+  "conflict_threshold": 0.1,
+  "number_window": 400,
+  "text_globs": [
+    "report/[0-9]*.md"
+  ],
+  "text_exclude": [
+    "report/90_price_tag.md",
+    "report/00_smeta.md"
+  ],
+  "rules": [
+    {
+      "id": "E01",
+      "level": "error",
+      "entity": "claim",
+      "check": "fact_has_source_and_offset",
+      "message": "Факт без источника или позиции цитаты"
+    },
+    {
+      "id": "E02",
+      "level": "error",
+      "entity": "claim",
+      "check": "fact_not_only_synthetic",
+      "message": "Факт опирается только на синтетику"
+    },
+    {
+      "id": "E03",
+      "level": "error",
+      "entity": "claim",
+      "check": "no_grade_D_fact_in_basis",
+      "message": "Факт с грейдом D/F в основании решения"
+    },
+    {
+      "id": "E04",
+      "level": "error",
+      "entity": "any",
+      "check": "refs_active",
+      "message": "Ссылка на неактивную запись без пометки"
+    },
+    {
+      "id": "E05",
+      "level": "error",
+      "entity": "decision",
+      "check": "options_at_least_3",
+      "message": "Меньше трёх вариантов"
+    },
+    {
+      "id": "E06",
+      "level": "error",
+      "entity": "decision",
+      "check": "has_keep_option",
+      "message": "Нет варианта «оставить как есть»"
+    },
+    {
+      "id": "E07",
+      "level": "error",
+      "entity": "decision",
+      "check": "has_close_option",
+      "message": "Нет варианта «закрыть»"
+    },
+    {
+      "id": "E08",
+      "level": "error",
+      "entity": "option",
+      "check": "option_has_objection",
+      "message": "Вариант без возражений"
+    },
+    {
+      "id": "E09",
+      "level": "error",
+      "entity": "objection",
+      "check": "no_open_objections_on_export",
+      "message": "Открытое возражение при экспорте"
+    },
+    {
+      "id": "E10",
+      "level": "error",
+      "entity": "text",
+      "check": "promise_rows_graded",
+      "message": "Обещание без тега грейда"
+    },
+    {
+      "id": "E11",
+      "level": "error",
+      "entity": "text",
+      "check": "numbers_tagged",
+      "message": "Число без эпистемического тега"
+    },
+    {
+      "id": "E12",
+      "level": "error",
+      "entity": "decision",
+      "check": "weak_basis_has_caveat_and_plan",
+      "message": "Слабые основания без оговорки и плана проверки"
+    },
+    {
+      "id": "E13",
+      "level": "error",
+      "entity": "source",
+      "check": "basis_sources_fresh",
+      "message": "Устаревший источник в основании решения"
+    },
+    {
+      "id": "E14",
+      "level": "error",
+      "entity": "claim",
+      "check": "material_numbers_on_page",
+      "message": "Существенное число не найдено на странице"
+    },
+    {
+      "id": "E15",
+      "level": "error",
+      "entity": "claim",
+      "check": "inference_derived",
+      "message": "Вывод без исходных утверждений или расчёта"
+    },
+    {
+      "id": "E16",
+      "level": "error",
+      "entity": "comparison",
+      "check": "comparable_metrics",
+      "message": "Несопоставимые метрики в одном сравнении"
+    },
+    {
+      "id": "E17",
+      "level": "error",
+      "entity": "claim",
+      "check": "no_synthetic_demand_premise",
+      "message": "Синтетика в основании решения о спросе"
+    },
+    {
+      "id": "E18",
+      "level": "error",
+      "entity": "decision",
+      "check": "chosen_by_human",
+      "message": "Решение выбрано не человеком"
+    },
+    {
+      "id": "E19",
+      "level": "error",
+      "entity": "decision",
+      "check": "locked_not_edited",
+      "message": "Правка зафиксированного решения"
+    },
+    {
+      "id": "E20",
+      "level": "error",
+      "entity": "decision",
+      "check": "chosen_has_revise_if",
+      "message": "Нет условий пересмотра"
+    },
+    {
+      "id": "E21",
+      "level": "error",
+      "entity": "option",
+      "check": "change_options_distinct",
+      "message": "Варианты «изменить» не различаются"
+    },
+    {
+      "id": "W01",
+      "level": "warning",
+      "entity": "claim",
+      "check": "forecast_has_horizon_base_rate",
+      "message": "Прогноз без горизонта или базовой ставки"
+    },
+    {
+      "id": "W02",
+      "level": "warning",
+      "entity": "claim",
+      "check": "assumption_has_falsifier",
+      "message": "Гипотеза без условия опровержения"
+    },
+    {
+      "id": "W03",
+      "level": "warning",
+      "entity": "claim",
+      "check": "numbers_manual",
+      "message": "Числа требуют ручной сверки"
+    },
+    {
+      "id": "W04",
+      "level": "warning",
+      "entity": "option",
+      "check": "rejected_has_revive_if",
+      "message": "Отклонённый вариант без условий возврата"
+    },
+    {
+      "id": "W05",
+      "level": "warning",
+      "entity": "option",
+      "check": "leader_has_flip_condition",
+      "message": "У лидера нет условия смены выбора"
+    },
+    {
+      "id": "W06",
+      "level": "warning",
+      "entity": "option",
+      "check": "option_has_money_line",
+      "message": "У варианта нет денежной строки"
+    },
+    {
+      "id": "W07",
+      "level": "warning",
+      "entity": "decision",
+      "check": "chosen_no_evidence_debt",
+      "message": "Долг доказательств у выбранного варианта"
+    },
+    {
+      "id": "W08",
+      "level": "warning",
+      "entity": "gate",
+      "check": "gate_well_formed",
+      "message": "Вопрос человеку без why/flips или перегружен"
+    },
+    {
+      "id": "W09",
+      "level": "warning",
+      "entity": "journal",
+      "check": "no_uncertain",
+      "message": "Неразрешённые записи журнала"
+    },
+    {
+      "id": "W10",
+      "level": "warning",
+      "entity": "run",
+      "check": "run_has_estimate",
+      "message": "Прогон без сметы"
+    },
+    {
+      "id": "W11",
+      "level": "warning",
+      "entity": "claim",
+      "check": "forecast_point_p",
+      "message": "Точечная вероятность вне диапазона"
+    },
+    {
+      "id": "W12",
+      "level": "warning",
+      "entity": "source",
+      "check": "dead_source_has_copy",
+      "message": "Недоступный источник без копии"
+    },
+    {
+      "id": "W13",
+      "level": "warning",
+      "entity": "decision",
+      "check": "locked_refs_under_revision",
+      "message": "Основание зафиксированного решения заменено, пересмотр предложен"
+    },
+    {
+      "id": "W14",
+      "level": "warning",
+      "entity": "decision",
+      "check": "open_alternatives",
+      "message": "У выбранного решения остались открытые варианты — отклоните их с условием возврата"
+    },
+    {
+      "id": "W15",
+      "level": "warning",
+      "entity": "option",
+      "check": "option_without_claims",
+      "message": "Вариант без своих ссылок на утверждения — оценки только в тексте"
+    }
+  ]
+}
